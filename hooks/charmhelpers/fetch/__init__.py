@@ -278,8 +278,8 @@ def add_source(source, key=None):
     placing your Juju environment at risk. ppa and cloud archive keys
     are securely added automtically, so sould not be provided.
     """
-    if source is None:
-        log('Source is not present. Skipping')
+    if source is None or key is None:
+        log('Source or Key is not present. Skipping')
         return
 
     if (source.startswith('ppa:') or
